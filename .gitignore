@@ -93,3 +93,6 @@ ENV/
 
 # API KEY
 api.key
+
+# Lamp settings
+my_lamps.py
