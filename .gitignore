@@ -96,3 +96,6 @@ api.key
 
 # Lamp settings
 my_lamps.py
+
+# Datasets
+datasets/
