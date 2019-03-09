@@ -5,6 +5,7 @@ from os import listdir
 from os.path import isfile, join
 
 import matplotlib.pyplot as plt
+from matplotlib import patches
 
 benford = {'1': 0.301, '2': 0.176, '3': 0.125, '4': 0.097, '5': 0.079, '6': 0.067, '7': 0.058, '8': 0.051, '9': 0.046, }
 
@@ -68,8 +69,11 @@ def draw_graph(distribution, name, filename):
     subplot_1.set_xticks(range(1, 10))
     subplot_1.set_ylim(0, 0.5)
 
+    # add fake label to display distribution values on the graph
     handles, labels = subplot_1.get_legend_handles_labels()
-    labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: t[0]))
+    handles.append(patches.Patch(color='white'))
+    label_text = '\n'.join([f'{x}: {str(round(y * 100, 1)).rjust(5)}%' for x, y in distribution.items()])
+    labels.append(label_text)
 
     subplot_1.legend(handles=handles, labels=labels, bbox_to_anchor=(0.99, 0.98))
 
