@@ -42,7 +42,7 @@ def main():
 
     print(f'{first_five} {first_two}')
     print(f'{second_five} {second_two}')
-    # print(f'{third_five} {third_two}\n')
+    print(f'{third_five} {third_two}\n')
 
     #########################
     #  _       _   _
@@ -57,11 +57,11 @@ def main():
     third_six = sorted(rand.generate_integers(n=6, min=1, max=49, replacement=False))
     fourth_six = sorted(rand.generate_integers(n=6, min=1, max=49, replacement=False))
 
-    # fifth_six = sorted(rand.generate_integers(n=6, min=1, max=49, replacement=False))
+    fifth_six = sorted(rand.generate_integers(n=6, min=1, max=49, replacement=False))
 
     print(f'{first_six}\n{second_six}\n{third_six}\n{fourth_six}')
 
-    # print(f'{fifth_six}')
+    print(f'{fifth_six}')
 
     used = set()
     used.update(first_five)
@@ -80,7 +80,6 @@ def main():
     all_50 = set(range(1, 51))
 
     unused = list(set.difference(all_50, used))
-    unused = set.difference(all_50, used)
 
     print(f'\n{sorted(unused)}\n')
 
